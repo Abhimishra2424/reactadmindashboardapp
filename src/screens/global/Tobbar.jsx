@@ -16,7 +16,38 @@ const Tobbar = () => {
 
   return (
     <Box display={"flex"} justifyContent="space-between" p={2}>
-      Tobbar
+      {/* serach Bar */}
+      <Box
+        display={"flex"}
+        backgroundColor={colors.primary[400]}
+        borderRadius="3px"
+      >
+        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="search" />
+        <IconButton sx={{ p: 1 }} type="button">
+          <SearchIcon />
+        </IconButton>
+      </Box>
+
+      {/* icons */}
+
+      <Box display={"flex"}>
+        <IconButton onClick={colorMode.toggleColorMode}>
+          {theme.palette.mode === "dark" ? (
+            <LightModeOutlinedIcon />
+          ) : (
+            <DarkModeOutlinedIcon />
+          )}
+        </IconButton>
+        <IconButton>
+          <NotificationsOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <SettingsOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <PersonOutlinedIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 };
